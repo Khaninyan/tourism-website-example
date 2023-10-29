@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Контакты - Сайт о туризме</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script>
+        function showSuccessPopup() {
+            var popup = document.getElementById("success-popup");
+            popup.style.display = "block";
+            setTimeout(function() {
+                popup.style.display = "none";
+            }, 2000); // Скроется через 2 секунды
+        }
+
+        function clearForm() {
+            document.getElementById("name").value = "";
+            document.getElementById("email").value = "";
+            document.getElementById("message").value = "";
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="about.html">О нас</a></li>
+                <li><a href="destinations.html">Популярные направления</a></li>
+                <li><a href="contact.html">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="main-content">
+        <h1>Контакты</h1>
+        <p>Свяжитесь с нами, чтобы получить дополнительную информацию или задать вопросы:</p>
+
+        <h2>Наш адрес</h2>
+        <p>123 Улица Туристов, Город, Страна</p>
+
+        <h2>Электронная почта</h2>
+        <p><a href="mailto:info@example.com">info@example.com</a></p>
+
+        <h2>Телефон</h2>
+        <p>+1 (123) 456-7890</p>
+
+        <!-- Форма обратной связи с вызовом showSuccessPopup() и clearForm() -->
+        <form onsubmit="showSuccessPopup(); clearForm(); return false;">
+            <label for="name">Ваше имя:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Ваш Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Ваше сообщение:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <input type="submit" value="Отправить">
+        </form>
+
+        <!-- Всплывающее окно с сообщением "Успешно отправлен" -->
+        <div id="success-popup" style="display: none; background-color: #00ff00; color: #fff; text-align: center; padding: 10px;">
+            Успешно отправлен
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Сайт о туризме</p>
+    </footer>
+</body>
+</html>
